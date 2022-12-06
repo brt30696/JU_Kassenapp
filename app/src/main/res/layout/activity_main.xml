@@ -6,13 +6,374 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_Article6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="Button"
+        android:textSize="40sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_PfandMinus"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_article1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Article4" />
+
+    <Button
+        android:id="@+id/btn_Article5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="Button"
+        android:textSize="40sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_PfandPlus"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Article3" />
+
+    <Button
+        android:id="@+id/btn_PfandPlus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="Pfand Plus"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_delete"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Article5" />
+
+    <Button
+        android:id="@+id/btn_number0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="0"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_number2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number1" />
+
+    <Button
+        android:id="@+id/btn_number3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="3"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Comma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_number2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number6" />
+
+    <Button
+        android:id="@+id/btn_number5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="5"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number2"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_number2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_number1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vLine_number2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vLine_number1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vLine_article_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <Button
+        android:id="@+id/btn_number8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="8"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number5"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_number2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_number1"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cash" />
+
+    <Button
+        android:id="@+id/btn_number9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="9"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_number2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cash" />
+
+    <Button
+        android:id="@+id/btn_number7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="7"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number4"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_number1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cash" />
+
+    <TextView
+        android:id="@+id/txt_cash"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="       gegeben: "
+        android:textAlignment="textStart"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalLine" />
+
+    <Button
+        android:id="@+id/btn_number2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="2"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number0"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_number2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/vLine_number1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number5" />
+
+    <Button
+        android:id="@+id/btn_number1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="1"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number0"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_number1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number4" />
+
+    <Button
+        android:id="@+id/btn_number4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="4"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number1"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_number1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number7" />
+
+    <Button
+        android:id="@+id/btn_number6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="6"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_number2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number9" />
+
+    <Button
+        android:id="@+id/btn_Comma"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text=","
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_number2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vLine_article1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.275" />
+
+    <Button
+        android:id="@+id/btn_Article2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="Button"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Article4"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/vLine_article1"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalLine" />
+
+    <Button
+        android:id="@+id/btn_Article1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="Button"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Article3"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalLine" />
+
+    <Button
+        android:id="@+id/btn_Article4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="Button"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Article6"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_article1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Article2" />
+
+    <Button
+        android:id="@+id/btn_PfandMinus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="Pfand Minus"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_delete"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vLine_article1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Article6" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="Eingabe löschen"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_PfandPlus" />
+
+    <Button
+        android:id="@+id/btn_Article3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="Button"
+        android:textSize="40sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Article5"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Article1" />
+
+    <ListView
+        android:id="@+id/list_articles"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintEnd_toStartOf="@id/vLine_article_number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/btn_settings"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintStart_toStartOf="@+id/vLine_article1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">JU_Kassenapp</string>
+    <string name="app_name">JU Kassenapp</string>
+    <string name="article_1">Artikel 1</string>
 </resources>
