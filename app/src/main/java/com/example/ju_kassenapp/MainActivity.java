@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnNum8, btnNum9, btnNum0, btnNumComma;
     private Button btnClear, btnPfandPlus, btnPfandMinus, btn1, btn2, btn3, btn4, btn5, btn6;
     private ListView lstResults;
-
+    private String keyboardString = "";
+    private final ArrayList<Article> articles = new ArrayList<Article>();
 
 
 
@@ -53,6 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         assignId(btn6, R.id.btn_Article6);
         lstResults = findViewById(R.id.list_articles);
 
+        articles.add(0, new Article(btn1, "Feuerzangenbowle", 4.0, 5.0, true));
+        articles.add(1, new Article(btn2, "Kinderpunsch", 2.0, 5.0, true));
+        articles.add(2, new Article(btn4, "Maroni", 3.0, 0.0, true));
+
     }
 
     private void assignId(Button btn, int id){
@@ -60,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn.setOnClickListener(this);
     }
 
-    private String keyboardString = "";
     private boolean readKeyboard(Button btn){
         int btnId = btn.getId();
         if (btnId == R.id.btn_Comma && !keyboardString.contains(btn.getText().toString())){
@@ -86,16 +91,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return false;
     }
 
+    private boolean readDeposit(Button btn){
+        if (btn.getId() == R.id.btn_PfandMinus){
+            Article.removeDeposit();
+            return true;
+        }
+        if (btn.getId() == R.id.btn_PfandPlus){
+            Article.addDeposit();
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public void onClick(View view) {
         Button btn = (Button) view;
         String btnText = btn.getText().toString();
         int btnId = btn.getId();
         if (readKeyboard(btn)){
-            txtCash.setText("gegeben: " + keyboardString);
+            txtCash.setText(getString(R.string.gegeben) + keyboardString);
         }
         else if (readDelete(btn)){
-            txtCash.setText("gegeben: " + keyboardString);
+            txtCash.setText(getString(R.string.gegeben) + keyboardString);
+            Article.clearDeposit();
+            for (int i = 0; i < articles.toArray().length; i++){
+                articles.get(i).clearCount();
+            }
+        }
+        else if (readDeposit(btn)){
+            Toast.makeText(this, Article.getNumberOfDeposit(), Toast.LENGTH_SHORT).show();
+        }
+        for (int i = 0; i < articles.toArray().length; i++){
+            if (btn.getId() == articles.get(i).getButton().getId()){
+                articles.get(i).addOne();
+                break;
+            }
         }
     }
 
