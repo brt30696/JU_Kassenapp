@@ -43,10 +43,10 @@
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:text="Pfand Plus"
-        android:textSize="40sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_delete"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_Article5" />
 
@@ -254,8 +254,8 @@
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
-        android:text="Button"
-        android:textSize="40sp"
+        android:text="Kinderpunsch"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_Article4"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
         app:layout_constraintHorizontal_bias="0.0"
@@ -268,8 +268,8 @@
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
-        android:text="Button"
-        android:textSize="40sp"
+        android:text="Feuerzangenbowle"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_Article3"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
         app:layout_constraintHorizontal_bias="0.0"
@@ -282,8 +282,8 @@
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
-        android:text="Button"
-        android:textSize="40sp"
+        android:text="Maroni"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_Article6"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
         app:layout_constraintHorizontal_bias="0.5"
@@ -297,7 +297,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:text="Pfand Minus"
-        android:textSize="40sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_delete"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
         app:layout_constraintHorizontal_bias="0.5"
@@ -311,7 +311,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:text="Eingabe löschen"
-        android:textSize="40sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
         app:layout_constraintHorizontal_bias="0.5"
@@ -337,7 +337,7 @@
         android:id="@+id/list_articles"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintBottom_toTopOf="@+id/txt_return"
         app:layout_constraintEnd_toStartOf="@id/vLine_article_number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -354,7 +354,7 @@
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/txt_sum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -364,7 +364,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/txt_return"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"

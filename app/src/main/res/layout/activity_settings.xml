@@ -1,7 +1,365 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".settings"/>
+    tools:context=".settings">
+    <!--
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="150dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <EditText
+                android:id="@+id/txt_Articel1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:text="Feuerzangenbowle"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_Articel2"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/cbx_visible1"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Verfügbar"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbx_Pfand1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cbx_Pfand1" />
+
+            <CheckBox
+                android:id="@+id/cbx_Pfand1"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Pfand"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_price1"
+                app:layout_constraintEnd_toStartOf="@+id/cbx_visible1"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_price1" />
+
+            <EditText
+                android:id="@+id/txt_price1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:text="0.0"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_Articel1"
+                app:layout_constraintEnd_toStartOf="@+id/cbx_Pfand1"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_Articel1" />
+
+            <EditText
+                android:id="@+id/txt_Articel2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:text="Kinderpunsch"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_Articel3"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_Articel1" />
+
+            <CheckBox
+                android:id="@+id/cbx_visible2"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Verfügbar"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbx_Pfand2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cbx_Pfand2" />
+
+            <CheckBox
+                android:id="@+id/cbx_Pfand2"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Pfand"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_price2"
+                app:layout_constraintEnd_toStartOf="@+id/cbx_visible2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_price2" />
+
+            <EditText
+                android:id="@+id/txt_price2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:text="0.0"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_Articel2"
+                app:layout_constraintEnd_toStartOf="@+id/cbx_Pfand2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_Articel2" />
+
+            <EditText
+                android:id="@+id/txt_Articel3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:text="Maroni"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_Articel4"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_Articel2" />
+
+            <CheckBox
+                android:id="@+id/cbx_visible3"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Verfügbar"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbx_Pfand6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cbx_Pfand6" />
+
+            <CheckBox
+                android:id="@+id/cbx_Pfand3"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Pfand"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_price4"
+                app:layout_constraintEnd_toStartOf="@+id/cbx_visible4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_price4" />
+
+            <EditText
+                android:id="@+id/txt_price3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:text="0.0"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_Articel3"
+                app:layout_constraintEnd_toStartOf="@+id/cbx_Pfand6"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_Articel3" />
+
+            <EditText
+                android:id="@+id/txt_Articel4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:text="Artikel4"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_Articel5"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_Articel3" />
+
+            <CheckBox
+                android:id="@+id/cbx_visible4"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Verfügbar"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbx_Pfand3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cbx_Pfand3" />
+
+            <CheckBox
+                android:id="@+id/cbx_Pfand4"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Pfand"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_price6"
+                app:layout_constraintEnd_toStartOf="@+id/cbx_visible6"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_price6" />
+
+            <EditText
+                android:id="@+id/txt_price4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:text="0.0"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_Articel4"
+                app:layout_constraintEnd_toStartOf="@+id/cbx_Pfand3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_Articel4" />
+
+            <EditText
+                android:id="@+id/txt_Articel5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:text="Artikel5"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_Articel6"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_Articel4" />
+
+            <CheckBox
+                android:id="@+id/cbx_visible5"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Verfügbar"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbx_Pfand5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cbx_Pfand5" />
+
+            <CheckBox
+                android:id="@+id/cbx_Pfand5"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Pfand"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_price5"
+                app:layout_constraintEnd_toStartOf="@+id/cbx_visible5"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_price5" />
+
+            <EditText
+                android:id="@+id/txt_price5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:text="0.0"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_Articel5"
+                app:layout_constraintEnd_toStartOf="@+id/cbx_Pfand5"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_Articel5" />
+
+            <EditText
+                android:id="@+id/txt_Articel6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:text="Artikel6"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_Articel5" />
+
+            <CheckBox
+                android:id="@+id/cbx_visible6"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Verfügbar"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbx_Pfand4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cbx_Pfand4" />
+
+            <CheckBox
+                android:id="@+id/cbx_Pfand6"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Pfand"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_price3"
+                app:layout_constraintEnd_toStartOf="@+id/cbx_visible3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_price3" />
+
+            <EditText
+                android:id="@+id/txt_price6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:text="0.0"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_Articel6"
+                app:layout_constraintEnd_toStartOf="@+id/cbx_Pfand4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_Articel6" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.35" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    -->
+</androidx.constraintlayout.widget.ConstraintLayout>
