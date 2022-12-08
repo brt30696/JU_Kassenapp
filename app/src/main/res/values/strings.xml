@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">JU Kassenapp</string>
     <string name="article_1">Artikel 1</string>
-    <string name="gegeben">gegeben: </string>
+    <string name="gegeben">gegeben:  </string>
 </resources>

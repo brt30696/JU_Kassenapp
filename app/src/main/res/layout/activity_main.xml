@@ -363,14 +363,6 @@
         android:layout_width="0dp"
         android:layout_height="5dp"
         android:background="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/txt_return"
-        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
-        app:layout_constraintStart_toStartOf="@+id/txt_result1" />
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="5dp"
-        android:background="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -382,28 +374,35 @@
         android:background="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
-        app:layout_constraintTop_toTopOf="@+id/horizontalLine" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_sum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="60dp"
         android:text="TextView"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
-        app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textAlignment="textEnd"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_return"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
         android:text="TextView"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
-        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
-        app:layout_constraintStart_toStartOf="@+id/vLine_article1" />
+        android:textAlignment="textEnd"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_cash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintTop_toBottomOf="@+id/txt_sum" />
 
     <TextView
         android:id="@+id/txt_result1"
@@ -412,21 +411,34 @@
         android:layout_marginStart="16dp"
         android:text="txt_result"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_sum"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_result2"
-        android:layout_width="0dp"
+        android:layout_width="140dp"
         android:layout_height="0dp"
         android:text="TextView"
+        android:textAlignment="textEnd"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_return"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/vLine_article1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
+        app:srcCompat="@drawable/embeddedimage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

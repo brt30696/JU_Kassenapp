@@ -69,12 +69,20 @@ public class Article {
         return count * price;
     }
 
+    public double getCount(){
+        return count;
+    }
+
     public static double getDepositSum(){
         return numberOfDeposit * Deposit;
     }
 
     public static void setDeposit(double deposit){
         if (Deposit <= 0) Deposit = deposit;
+    }
+
+    public static double getDeposit(){
+        return Deposit;
     }
 }
 

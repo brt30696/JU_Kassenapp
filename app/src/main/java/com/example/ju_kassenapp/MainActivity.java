@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         articles.add(1, new Article(btn2, "Kinderpunsch", 2.0, true,true));
         articles.add(2, new Article(btn4, "Maroni", 3.0, false, true));
 //        articles.add(3, new Article(btn5, "Mandeln", 2.5, false, true));
+        btnPfandMinus.setText(String.format("Pfand Minus\n%.2f€", -Article.getDeposit()));
+        btnPfandPlus.setText(String.format("Pfand Plus\n%.2f€", Article.getDeposit()));
 
         drawResult();
     }
@@ -118,19 +120,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 btnId == R.id.btn_number8 || btnId == R.id.btn_number9 || btnId == R.id.btn_Comma)) {
             return false;
         }
-
-        if (btn.getText() == "." && !keyboardString.contains(".") && keyboardString.isEmpty()) {
+        String btnText = btn.getText().toString();
+        if ((btnText == ".") == false)
+            if (!keyboardString.contains("."))
+                if (keyboardString.length() == 0) {
             keyboardString = "0.";
-            txtCash.setText(getString(R.string.gegeben) + keyboardString);
+            txtCash.setText("gegeben: " + keyboardString);
             cash = 0.0;
             return true;
         }
-        if (btn.getText() == "." && keyboardString.contains(".") && !keyboardString.isEmpty()){
+        if ((btn.getText() == ".") == false)
+            if (keyboardString.contains("."))
+                if(!keyboardString.isEmpty()){
             return false;
         }
         keyboardString += btn.getText();
         cash = Double.parseDouble(keyboardString);
-        txtCash.setText(getString(R.string.gegeben) + keyboardString);
+        txtCash.setText("gegeben: " + keyboardString + "€");
         if (sum > 0.0) {
             calculate();
             drawResult();
@@ -140,16 +146,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void drawResult(){
         /* draw article list */
-        String resultString = "";
+        String resultString1 = "";
+        StringBuilder resultString2 = new StringBuilder();
         for (int i = 0; i < articles.size(); i++){
-            resultString = resultString + articles.get(i).toString() + "\n";
+            resultString1 = resultString1 + articles.get(i).toString() + ":\n";
+            resultString2.append(String.format("%.2f €\n", articles.get(i).getSum()));
         }
-        txtResult1.setText(resultString);
+        resultString1 += Article.numberOfDepositToString() + ":";
+        resultString2.append(String.format("%.2f €", Article.getDepositSum()));
+        txtResult1.setText(resultString1);
         /* draw deposit list */
-        txtResult2.setText(Article.numberOfDepositToString());
+        txtResult2.setText(resultString2);
+
         /* draw sum & return money */
         txtSum.setText( String.format("Summe: %.2f€", sum));
-        txtReturn.setText(String.format("Rückgeld: %.2f", returnMoney));
+        txtReturn.setText(String.format("Rückgeld: %.2f€", returnMoney));
     }
     private void calculate(){
         /* sum over all article */
