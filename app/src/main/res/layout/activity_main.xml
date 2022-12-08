@@ -13,11 +13,11 @@
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:text="Button"
-        android:textSize="40sp"
+        android:textAllCaps="false"
+        android:textSize="25sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/btn_PfandMinus"
-        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/vLine_article1"
         app:layout_constraintTop_toBottomOf="@+id/btn_Article4" />
 
@@ -28,7 +28,8 @@
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:text="Button"
-        android:textSize="40sp"
+        android:textAllCaps="false"
+        android:textSize="25sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/btn_PfandPlus"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
@@ -38,6 +39,8 @@
 
     <Button
         android:id="@+id/btn_PfandPlus"
+        android:backgroundTint="#508741"
+        android:textAllCaps="false"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
@@ -152,6 +155,8 @@
         android:id="@+id/btn_number7"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
         android:text="7"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_number4"
@@ -164,7 +169,7 @@
         android:id="@+id/txt_cash"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="       gegeben: "
+        android:text="gegeben: "
         android:textAlignment="textStart"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_number7"
@@ -177,6 +182,8 @@
         android:id="@+id/btn_number2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
         android:text="2"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_number0"
@@ -233,7 +240,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
-        android:text=","
+        android:text="."
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -250,26 +257,29 @@
 
     <Button
         android:id="@+id/btn_Article2"
+        android:textAllCaps="false"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:text="Kinderpunsch"
         android:textSize="25sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/btn_Article4"
-        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/vLine_article1"
         app:layout_constraintTop_toBottomOf="@+id/horizontalLine" />
 
     <Button
         android:id="@+id/btn_Article1"
+        android:textAllCaps="false"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:text="Feuerzangenbowle"
         android:textSize="25sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/btn_Article3"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
         app:layout_constraintHorizontal_bias="0.0"
@@ -278,20 +288,23 @@
 
     <Button
         android:id="@+id/btn_Article4"
+        android:textAllCaps="false"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:text="Maroni"
         android:textSize="25sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/btn_Article6"
-        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/vLine_article1"
         app:layout_constraintTop_toBottomOf="@+id/btn_Article2" />
 
     <Button
         android:id="@+id/btn_PfandMinus"
+        android:textAllCaps="false"
+        android:backgroundTint="#CDDD4E41"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
@@ -299,48 +312,41 @@
         android:text="Pfand Minus"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_delete"
-        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/vLine_article1"
         app:layout_constraintTop_toBottomOf="@+id/btn_Article6" />
 
     <Button
         android:id="@+id/btn_delete"
         android:layout_width="0dp"
+        android:textAllCaps="false"
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
+        android:backgroundTint="#F4511E"
+        android:hapticFeedbackEnabled="false"
         android:text="Eingabe löschen"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_PfandPlus" />
 
     <Button
         android:id="@+id/btn_Article3"
         android:layout_width="0dp"
+        android:textAllCaps="false"
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:text="Button"
-        android:textSize="40sp"
+        android:textSize="25sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/btn_Article5"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_Article1" />
-
-    <ListView
-        android:id="@+id/list_articles"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_return"
-        app:layout_constraintEnd_toStartOf="@id/vLine_article_number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/btn_settings"
@@ -353,10 +359,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
+    <View
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/txt_return"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintStart_toStartOf="@+id/txt_result1" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="5dp"
+        android:layout_height="0dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintTop_toTopOf="@+id/horizontalLine" />
+
     <TextView
         android:id="@+id/txt_sum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="TextView"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
@@ -372,6 +404,29 @@
         app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
         app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
         app:layout_constraintStart_toStartOf="@+id/vLine_article1" />
+
+    <TextView
+        android:id="@+id/txt_result1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:text="txt_result"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_sum"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_result2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="TextView"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_return"
+        app:layout_constraintEnd_toStartOf="@+id/vLine_article_number"
+        app:layout_constraintStart_toEndOf="@+id/vLine_article1"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
