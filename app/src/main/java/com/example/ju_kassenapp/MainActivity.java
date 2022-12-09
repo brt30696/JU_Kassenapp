@@ -1,52 +1,61 @@
 package com.example.ju_kassenapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
+    // View elements declaration
     private TextView txtSum, txtReturn, txtCash, txtResult1, txtResult2;
-    private Button btnNum1, btnNum2, btnNum3, btnNum4, btnNum5, btnNum6, btnNum7;
-    private Button btnNum8, btnNum9, btnNum0, btnNumComma;
-    private Button btnClear, btnPfandPlus, btnPfandMinus, btn1, btn2, btn3, btn4, btn5, btn6;
+//    private Button btnNum1, btnNum2, btnNum3, btnNum4, btnNum5, btnNum6, btnNum7;
+//    private Button btnNum8, btnNum9, btnNum0, btnNumComma;
+    private Button btnClear;
+    private Button btnDelete, btnPfandPlus, btnPfandMinus, btn1, btn2, btn3, btn4, btn5, btn6;
     private String keyboardString = "";
     private final ArrayList<Article> articles = new ArrayList<Article>(6);
 
+    // Components for the calculation
     private double cash = 0.0;
     private double returnMoney = 0.0;
     private double sum = 0.0;
 
+    @SuppressLint("DefaultLocale")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtSum =    findViewById(R.id.txt_sum);
-        txtReturn = findViewById(R.id.txt_return);
-        txtCash =   findViewById(R.id.txt_cash);
+        txtSum     = findViewById(R.id.txt_sum);
+        txtReturn  = findViewById(R.id.txt_return);
+        txtCash    = findViewById(R.id.txt_cash);
         txtResult1 = findViewById(R.id.txt_result1);
         txtResult2 = findViewById(R.id.txt_result2);
 
-        btnNum1 = assignId(R.id.btn_number1);
-        btnNum2 = assignId(R.id.btn_number2);
-        btnNum3 = assignId(R.id.btn_number3);
-        btnNum4 = assignId(R.id.btn_number4);
-        btnNum5 = assignId(R.id.btn_number5);
-        btnNum6 = assignId(R.id.btn_number6);
-        btnNum7 = assignId(R.id.btn_number7);
-        btnNum8 = assignId(R.id.btn_number8);
-        btnNum9 = assignId(R.id.btn_number9);
-        btnNum0 = assignId(R.id.btn_number0);
-        btnNumComma = assignId(R.id.btn_Comma);
+        assignId(R.id.btn_number1);
+        assignId(R.id.btn_number2);
+        assignId(R.id.btn_number3);
+        assignId(R.id.btn_number4);
+        assignId(R.id.btn_number5);
+        assignId(R.id.btn_number6);
+        assignId(R.id.btn_number7);
+        assignId(R.id.btn_number8);
+        assignId(R.id.btn_number9);
+        assignId(R.id.btn_number0);
+        assignId(R.id.btn_Comma);
 
-        btnClear = assignId(R.id.btn_delete);
-        btnPfandPlus = assignId(R.id.btn_PfandPlus);
+        btnClear      = assignId(R.id.btn_clear);
+        btnClear.setLongClickable(true);
+        btnClear.setOnLongClickListener(this);
+
+        btnDelete     = assignId(R.id.btn_delete);
+        btnPfandPlus  = assignId(R.id.btn_PfandPlus);
         btnPfandMinus = assignId(R.id.btn_PfandMinus);
         btn1 = assignId(R.id.btn_Article1);
         btn2 = assignId(R.id.btn_Article2);
@@ -55,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn5 = assignId(R.id.btn_Article5);
         btn6 = assignId(R.id.btn_Article6);
 
+        // define Articles
         Article.setDeposit(5.0);
         articles.add(0, new Article(btn1, "Feuerzangenbowle", 4.0, true,true));
         articles.add(1, new Article(btn2, "Kinderpunsch", 2.0, true,true));
@@ -66,14 +76,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         drawResult();
     }
 
-    private Button assignId(int id){
-        Button btn__;
-        btn__ = findViewById(id);
-        btn__.setOnClickListener(this);
-        return btn__;
+    @Override
+    public void onClick(View view) {
+        Button btn = (Button) view;
+
+        if (deleteOnClickListener(btn)) return;
+        if (depositOnClickListener(btn)) return;
+        if (articleOnClickListener(btn, articles)) return;
+        if (keyboardOnClickListener(btn)) return;
     }
 
-    private void deleteOnClickListener(Button btn){
+    @Override
+    public boolean onLongClick(View view) {
+    // for btnClear to clear the txtCash View complete
+        keyboardString = "";
+        manageData();
+        return false;
+    }
+
+    private boolean deleteOnClickListener(Button btn){
         if (btn.getId() == R.id.btn_delete) {
             /* clear article data */
             Article.clearDeposit();
@@ -86,61 +107,71 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             cash = 0.0;
             /* clear txtBoxes */
             drawResult();
-            txtCash.setText(getString(R.string.gegeben) + "0.0");
+            txtCash.setText(getString(R.string.gegeben) + " 0.00 €");
             keyboardString = "";
+            return true;
         }
+        return false;
     }
-    private void depositOnClickListener(Button btn){
+    private boolean depositOnClickListener(Button btn){
         if (btn.getId() == R.id.btn_PfandMinus){
             Article.removeDeposit();
         }
         else if (btn.getId() == R.id.btn_PfandPlus){
             Article.addDeposit();
         }else {
-            return;
+            return false;
         }
         calculate();
         drawResult();
+        return true;
     }
-    private void articleOnClickListener(Button btn, ArrayList<Article> articles){
+    private boolean articleOnClickListener(Button btn, ArrayList<Article> articles){
         for (int i = 0; i < articles.toArray().length; i++){
             if (btn.getId() == articles.get(i).getButtonId()){
                 articles.get(i).addOne();
                 calculate();
                 drawResult();
-                return;
+                return true;
             }
         }
-
+        return false;
     }
-    private boolean keyboardOnClickListener(Button btn){
+    private boolean keyboardOnClickListener(Button btn) {
         int btnId = btn.getId();
         if (!(btnId == R.id.btn_number0 || btnId == R.id.btn_number1 || btnId == R.id.btn_number2 || btnId == R.id.btn_number3 ||
                 btnId == R.id.btn_number4 || btnId == R.id.btn_number5 || btnId == R.id.btn_number6 || btnId == R.id.btn_number7 ||
-                btnId == R.id.btn_number8 || btnId == R.id.btn_number9 || btnId == R.id.btn_Comma)) {
+                btnId == R.id.btn_number8 || btnId == R.id.btn_number9 || btnId == R.id.btn_Comma || btnId == R.id.btn_clear)) {
             return false;
         }
         String btnText = btn.getText().toString();
-        if ((btnText == ".") == false)
-            if (!keyboardString.contains("."))
-                if (keyboardString.length() == 0) {
-            keyboardString = "0.";
-            txtCash.setText("gegeben: " + keyboardString);
-            cash = 0.0;
-            return true;
+        switch (btnId) {
+            case (R.id.btn_clear): {
+                if ((keyboardString != null) && (keyboardString.length() > 0)) {
+                    keyboardString = keyboardString.substring(0, keyboardString.length() - 1);
+                }
+                break;
+            }
+            case (R.id.btn_Comma): {
+                if (!keyboardString.contains(".")) {
+                    if (keyboardString.length() == 0) {
+                        keyboardString = "0.";
+                        txtCash.setText("gegeben: " + keyboardString);
+                        cash = 0.0;
+                        break;
+                    }
+                } else {
+                    if (!keyboardString.isEmpty()) {
+                        return false;
+                    }
+                }
+            }
+            default: {
+                keyboardString += btn.getText();
+                break;
+            }
         }
-        if ((btn.getText() == ".") == false)
-            if (keyboardString.contains("."))
-                if(!keyboardString.isEmpty()){
-            return false;
-        }
-        keyboardString += btn.getText();
-        cash = Double.parseDouble(keyboardString);
-        txtCash.setText("gegeben: " + keyboardString + "€");
-        if (sum > 0.0) {
-            calculate();
-            drawResult();
-        }
+        manageData();
         return true;
     }
 
@@ -159,8 +190,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtResult2.setText(resultString2);
 
         /* draw sum & return money */
-        txtSum.setText( String.format("Summe: %.2f€", sum));
-        txtReturn.setText(String.format("Rückgeld: %.2f€", returnMoney));
+        txtSum.setText( String.format("%.2f €", sum));
+        txtReturn.setText(String.format("%.2f €", returnMoney));
+        // change color depending of the signe of returnMoney
+        if (returnMoney < 0.0){
+            txtReturn.setTextColor(ContextCompat.getColor(this, R.color.error));
+        }else if (returnMoney > 0.0){
+            txtReturn.setTextColor(ContextCompat.getColor(this, R.color.good));
+        }else
+            txtReturn.setTextColor(txtSum.getTextColors());
+
     }
     private void calculate(){
         /* sum over all article */
@@ -174,16 +213,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (cash > 0.0){
             returnMoney = cash - sum;
         }
+        else {
+            returnMoney = 0.0;
+        }
     }
-    @Override
-    public void onClick(View view) {
-        Button btn = (Button) view;
-
-        keyboardOnClickListener(btn);
-        deleteOnClickListener(btn);
-        depositOnClickListener(btn);
-        articleOnClickListener(btn, articles);
+    private void manageData(){
+        if (keyboardString.length() == 0){
+            cash = 0.0;
+        }
+        else {
+            cash = Double.parseDouble(keyboardString);
+        }
+        txtCash.setText("gegeben: " + keyboardString + "€");
+        if (sum > 0.0) {
+            calculate();
+            drawResult();
+        }
     }
-
+    private Button assignId(int id){
+        Button btn__;
+        btn__ = findViewById(id);
+        btn__.setOnClickListener(this);
+        return btn__;
+    }
 
 }
