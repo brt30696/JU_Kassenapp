@@ -2,4 +2,8 @@
     <string name="app_name">JU Kassenapp</string>
     <string name="article_1">Artikel 1</string>
     <string name="gegeben">gegeben:  </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_draw_open">Open navigation Drawer</string>
+    <string name="navigation_draw_close">Close navigation Drawer</string>
 </resources>
